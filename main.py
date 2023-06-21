@@ -1,18 +1,21 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 from fastapi.responses import JSONResponse
-from sqlmodel import SQLModel, create_engine
 from http import HTTPStatus
 from utils.api_response import format_response
-from models import farm_model, sheep_model, user_model, prediction_model
+from api.routers import sheep_routes
 
 app = FastAPI()
-
-engine = create_engine("sqlite:///database.db", echo=True)
-SQLModel.metadata.create_all(engine)
+app.include_router(sheep_routes.router)
 
 
 @app.get("/")
 def root():
     response_data = format_response(
-        HTTPStatus.OK, "welcome to Cool sheep AI API!", None)
+        HTTPStatus.OK, "Welcome to cool sheep ai API!", None)
     return JSONResponse(content=response_data)
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(app, host="0.0.0.0", port=8000)

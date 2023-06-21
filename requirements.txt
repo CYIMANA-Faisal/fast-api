@@ -2,3 +2,8 @@ uvicorn
 fastapi
 alembic
 sqlmodel
+pydantic[email]
+python-decouple
+psycopg2
+sqlalchemy[asyncio]
+asyncpg

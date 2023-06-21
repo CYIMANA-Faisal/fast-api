@@ -1,0 +1,38 @@
+# FastAPI Project with SQLModel, Alembic, and PostgreSQL
+
+This is a template for a FastAPI project that uses SQLModel as the ORM, Alembic for database migration, and PostgreSQL as the database.
+
+## Prerequisites
+
+Make sure you have the following software installed on your machine:
+
+- Python 3.7+
+- pip (Python package manager)
+- PostgreSQL
+
+## Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/yourproject.git
+cd yourproject
+
+# Create a virtual environment
+python3 -m venv venv
+source venv/bin/activate  # for Linux/Mac
+# OR
+.\venv\Scripts\activate  # for Windows
+
+# Install the required dependencies
+pip install -r requirements.txt
+
+# Create a PostgreSQL database
+createdb your_database_name
+
+# Set environment variables
+# Copy the provided .env.example file and rename it to .env
+# Update the .env file with your PostgreSQL database details
+
+# Apply database migrations with Alembic
+alembic upgrade head
+```
