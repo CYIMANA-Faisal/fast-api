@@ -8,3 +8,14 @@ psycopg2
 sqlalchemy[asyncio]
 asyncpg
 python-multipart
+numpy
+joblib
+pandas
+scikit-image
+torch
+torchvision
+opencv-python
+ultralytics
+segment-anything
+matplotlib
+scikit-learn

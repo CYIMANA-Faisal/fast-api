@@ -24,6 +24,10 @@ share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+model/*lasso_model*
+model/*sam_vit*
+model/*yolov8n*
+
 MANIFEST
 
 # PyInstaller
