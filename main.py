@@ -2,10 +2,11 @@ from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from http import HTTPStatus
 from utils.api_response import format_response
-from api.routers import sheep_routes
+from api.routers import predictions_routes, sheep_routes
 
 app = FastAPI()
 app.include_router(sheep_routes.router)
+app.include_router(predictions_routes.router)
 
 
 @app.get("/")
